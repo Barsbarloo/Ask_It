@@ -1,4 +1,8 @@
 class QuestionsController < ApplicationController
+    def edit
+        @question = Question.find_by id: params[:id]
+    end
+
     def index
         @questions = Question.all
     end
