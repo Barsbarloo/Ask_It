@@ -1,5 +1,9 @@
 class AnswersController < ApplicationController
     before_action :set_question!
+    
+    def edit
+        answer = @question.answers.find params[:id]
+    end
 
     def create
         @answer = @question.answers.build answer_params
