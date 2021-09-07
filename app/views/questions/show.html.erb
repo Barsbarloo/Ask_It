@@ -21,4 +21,8 @@
 
 <h1 class= 'mt-5'>Answers</h1>
 
+<%= paginate @answers %>
+
  <%= render partial: 'answers/answer', collection: @answers, as: :answer, locals: {question: @question} %>
+
+ <%= paginate @answers %>
