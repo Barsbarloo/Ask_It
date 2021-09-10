@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_secure_password validations: false
   
   validate :password_presence
+  validate :correct_old_password, on: :update
   validates :password, confirmation: true, allow_blank: true,
     length: {minimum: 8, maximum: 70}
 
@@ -11,6 +12,12 @@ class User < ApplicationRecord
   validate :password_complexity
   
   private
+
+  def correct_old_password
+    return if Bcrypt::Password.new(password_digest_was).is_password?(old_password)
+
+    errors.add :old_password, 'is incorrect'
+  end
 
   def password_complexity
     # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
