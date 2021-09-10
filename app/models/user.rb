@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_secure_password validations: false
   
   validate :password_presence
-  validate :correct_old_password, on: :update
+  validate :correct_old_password, on: :update, if: -> { password.present? }
   validates :password, confirmation: true, allow_blank: true,
     length: {minimum: 8, maximum: 70}
 
