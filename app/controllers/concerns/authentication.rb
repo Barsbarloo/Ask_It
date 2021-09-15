@@ -42,8 +42,16 @@ module Authentication
     cookies.encrypted.permanent[:user_id] = user.id
   end
 
+  def forget(user)
+    user.forget_me
+    cookies.delete :user_id
+    cookies.delete :remember_token
+  end
+
   def sign_out
+    forget current_user
     session.delete :user_id
+    @current_user = nil
   end
 
   helper_method :current_user, :user_signed_in?
