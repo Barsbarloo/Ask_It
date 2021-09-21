@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   include Pagy::Frontend
 
@@ -6,7 +8,7 @@ module ApplicationHelper
     css_class = current_page == title ? 'text-secondary' : 'text-white'
 
     options[:class] = if options[:class]
-                        options[:class] + ' ' + css_class
+                        "#{options[:class]} #{css_class}"
                       else
                         css_class
                       end
