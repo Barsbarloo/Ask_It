@@ -28,6 +28,8 @@ gem 'draper', '~> 4.0'
 gem 'pagy', '~> 4.10'
 gem 'valid_email2', '~> 4.0'
 gem 'rubyzip', '~> 2'
+gem 'caxlsx', '~> 3.1'
+gem 'caxlsx_rails', '~> 0.6'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
