@@ -14,7 +14,7 @@ class Admin::UsersController < ApplicationController
   
   def respond_with_zipped_users
     compressed_filestream = Zip::OutputStream.write_buffer do |zos|
-      User.oreder(created_at: :desc).each do |user|
+      User.order(created_at: :desc).each do |user|
         zos.put_next_entry "user_#{user.id}.xlsx"
         zos.print render_to_string(
           layout: false, handlers: [:axlsx], formats: [:xlsx],
