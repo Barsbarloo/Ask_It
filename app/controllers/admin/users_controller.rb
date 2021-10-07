@@ -10,6 +10,16 @@ class Admin::UsersController < ApplicationController
       format.zip {respond_with_zipped_users}
     end
   end
+
+  def create
+    if params[:archive].present?current_user
+      UserBulkService.call params[:archive]
+      flash[:success] = "User imporetd!"
+    end
+
+    redirect_to admin_users_path
+  end
+
   private
   
   def respond_with_zipped_users
