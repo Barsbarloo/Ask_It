@@ -30,6 +30,7 @@ gem 'valid_email2', '~> 4.0'
 gem 'rubyzip', '~> 2'
 gem 'caxlsx', '~> 3.1'
 gem 'caxlsx_rails', '~> 0.6'
+gem 'rubyXL', '~> 3.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
