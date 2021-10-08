@@ -12,9 +12,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    if params[:archive].present?current_user
+    if params[:archive].present?
       UserBulkService.call params[:archive]
-      flash[:success] = "User imporetd!"
+      flash[:success] = "User imported!"
     end
 
     redirect_to admin_users_path
