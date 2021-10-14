@@ -4,3 +4,7 @@ en:
       title: "Welcome to AskIt"
   menu:
     home: "Home"
+    questions: "Questions"
+  questions:
+    index:
+      title: "Questions"

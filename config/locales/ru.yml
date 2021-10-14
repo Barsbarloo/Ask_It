@@ -5,3 +5,6 @@ ru:
   menu:
     home: "Главная"
     questions: "Вопросы"
+  questions:
+    index:
+      title: "Вопросы"
