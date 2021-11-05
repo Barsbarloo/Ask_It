@@ -1,4 +1,11 @@
 en:
+  activerecord:
+    models:
+      question: Question
+    attributes:
+      question:
+        title: "Title"
+        body: "Body"
   pages:
     index:
       title: "Welcome to AskIt"
