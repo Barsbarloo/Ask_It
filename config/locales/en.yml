@@ -15,3 +15,5 @@ en:
   questions:
     index:
       title: "Questions"
+    destroy:
+      success: Question deleted! 
