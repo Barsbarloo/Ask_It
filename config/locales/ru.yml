@@ -15,3 +15,5 @@ ru:
   questions:
     index:
       title: "Вопросы"
+    destroy:
+      success: Вопрос удален! 
