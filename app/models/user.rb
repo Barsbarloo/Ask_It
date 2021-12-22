@@ -2,6 +2,10 @@ class User < ApplicationRecord
   attr_accessor :old_password, :remember_token
 
   has_secure_password validations: false
+
+  has_many :question, dependent: :destroy
+  has_many :answers, dependent: :destroy
+
   
   validate :password_presence
   validate :correct_old_password, on: :update, if: -> { password.present? }
